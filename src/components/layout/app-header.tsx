@@ -36,10 +36,11 @@ const navLinks = [
   },
   {
     label: 'Instructor',
-    href: '/#',
+    href: '/instructor/dashboard',
     sublinks: [
-      { label: 'Instructor List', href: '/#' },
-      { label: 'Instructor Profile', href: '/#' },
+      { label: 'Dashboard', href: '/instructor/dashboard' },
+      { label: 'My Courses', href: '/instructor/course' },
+      { label: 'My Profile', href: '/instructor/profile' },
     ],
   },
   {
@@ -164,20 +165,20 @@ export function AppHeader() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="flex flex-col p-0">
-              <SheetHeader className="p-6 pb-4">
+              <SheetHeader className="p-6 pb-4 border-b">
                  <SheetTitle>
                     <Link href="/" onClick={() => setOpen(false)} className="inline-block">
                         <Logo />
                     </Link>
                 </SheetTitle>
               </SheetHeader>
-              <div className="flex-1 overflow-y-auto p-6 pt-0">
+              <div className="flex-1 overflow-y-auto p-6 pt-4">
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
                     <div key={link.label}>
                        <Link
                           href={link.href}
-                          onClick={() => setOpen(false)}
+                          onClick={() => !link.sublinks && setOpen(false)}
                           className="text-lg font-medium text-foreground transition-colors hover:text-primary"
                         >
                           {link.label}
