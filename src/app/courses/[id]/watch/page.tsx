@@ -17,7 +17,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 
 export default function WatchCoursePage({ params }: { params: { id: string } }) {
-  const course = courses.find((c) => c.id === '5'); // Using a course with more curriculum for demo
+  const course = courses.find((c) => c.id === params.id);
 
   if (!course) {
     return <div className="container mx-auto py-12">Course not found.</div>;

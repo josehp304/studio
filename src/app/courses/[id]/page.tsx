@@ -213,6 +213,9 @@ export default function CourseDetailPage({ params }: { params: { id: string } })
                         <p className="text-3xl font-bold text-primary">${course.price}</p>
                         <Button size="lg" className="w-full font-bold text-white bg-gradient-to-r from-[#FF725E] to-[#F54B8D] hover:from-[#f86552] hover:to-[#e44281]">Add to Cart</Button>
                         <Button size="lg" variant="outline" className="w-full font-bold text-primary border-primary hover:bg-primary/5 hover:text-primary">Buy Now</Button>
+                        <Button asChild size="lg" variant="secondary" className="w-full font-bold text-secondary-foreground mt-2">
+                            <Link href={`/courses/${course.id}/watch`}>Watch Now (For Testing)</Link>
+                        </Button>
                    </div>
                    <div className="p-6 border-t space-y-3">
                         <h4 className="font-semibold font-headline">This course includes:</h4>
