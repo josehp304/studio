@@ -1,3 +1,4 @@
+
 import { PlaceHolderImages } from './placeholder-images';
 
 export type Instructor = {
@@ -18,6 +19,10 @@ export type Course = {
   studentCount: number;
   lessons: number;
   duration: string;
+  curriculum: {
+    section: string;
+    lessons: { title: string; duration: string; isPreview: boolean }[];
+  }[];
 };
 
 const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || '';
@@ -36,6 +41,11 @@ export const courses: Course[] = [
     studentCount: 50,
     lessons: 12,
     duration: '10hr 30min',
+    curriculum: [
+      { section: 'Introduction to UI/UX', lessons: [{ title: 'What is UI/UX Design?', duration: '15min', isPreview: true }, { title: 'The Design Process', duration: '30min', isPreview: false }] },
+      { section: 'User Research', lessons: [{ title: 'Conducting User Interviews', duration: '45min', isPreview: false }, { title: 'Creating User Personas', duration: '40min', isPreview: false }] },
+      { section: 'Wireframing & Prototyping', lessons: [{ title: 'Low-Fidelity Wireframes', duration: '50min', isPreview: false }, { title: 'High-Fidelity Prototypes with Figma', duration: '1hr 30min', isPreview: false }] },
+    ],
   },
   {
     id: '2',
@@ -50,6 +60,11 @@ export const courses: Course[] = [
     studentCount: 120,
     lessons: 20,
     duration: '15hr 00min',
+    curriculum: [
+        { section: 'Getting Started with WordPress', lessons: [{ title: 'Installation and Setup', duration: '20min', isPreview: true }, { title: 'Exploring the Dashboard', duration: '25min', isPreview: false }] },
+        { section: 'Themes and Plugins', lessons: [{ title: 'Choosing and Installing Themes', duration: '35min', isPreview: false }, { title: 'Essential Plugins for Every Site', duration: '50min', isPreview: false }] },
+        { section: 'Content Creation', lessons: [{ title: 'Creating Posts and Pages', duration: '45min', isPreview: false }, { title: 'Working with the Block Editor', duration: '1hr', isPreview: false }] },
+    ],
   },
   {
     id: '3',
@@ -63,6 +78,11 @@ export const courses: Course[] = [
     studentCount: 300,
     lessons: 35,
     duration: '25hr 10min',
+     curriculum: [
+      { section: 'Sketch Fundamentals', lessons: [{ title: 'Introduction to the Sketch Interface', duration: '30min', isPreview: true }, { title: 'Basic Shapes and Vector Tools', duration: '1hr', isPreview: false }] },
+      { section: 'Advanced Techniques', lessons: [{ title: 'Working with Symbols', duration: '1hr 15min', isPreview: false }, { title: 'Prototyping and Animations', duration: '2hr', isPreview: false }] },
+      { section: 'Designing a Real App', lessons: [{ title: 'Project Brief and Research', duration: '45min', isPreview: false }, { title: 'Designing the UI Screens', duration: '3hr', isPreview: false }] },
+    ],
   },
   {
     id: '4',
@@ -76,6 +96,11 @@ export const courses: Course[] = [
     studentCount: 80,
     lessons: 18,
     duration: '12hr 30min',
+     curriculum: [
+      { section: 'Angular Basics', lessons: [{ title: 'What is Angular?', duration: '15min', isPreview: true }, { title: 'Components and Modules', duration: '1hr', isPreview: false }] },
+      { section: 'Routing and Navigation', lessons: [{ title: 'Setting up Routes', duration: '45min', isPreview: false }, { title: 'Route Parameters', duration: '30min', isPreview: false }] },
+      { section: 'Forms and Services', lessons: [{ title: 'Template-Driven Forms', duration: '1hr', isPreview: false }, { title: 'Creating a Data Service', duration: '1hr', isPreview: false }] },
+    ],
   },
   {
     id: '5',
@@ -90,6 +115,11 @@ export const courses: Course[] = [
     studentCount: 500,
     lessons: 40,
     duration: '30hr 00min',
+     curriculum: [
+      { section: 'HTML5 Deep Dive', lessons: [{ title: 'Semantic HTML', duration: '1hr', isPreview: true }, { title: 'Forms and Input Types', duration: '1hr 30min', isPreview: false }] },
+      { section: 'CSS3 Mastery', lessons: [{ title: 'Flexbox and Grid', duration: '2hr', isPreview: false }, { title: 'Animations and Transitions', duration: '1hr 45min', isPreview: false }] },
+      { section: 'Responsive Design', lessons: [{ title: 'Media Queries', duration: '1hr 15min', isPreview: false }, { title: 'Mobile-First Approach', duration: '1hr', isPreview: false }] },
+    ],
   },
   {
     id: '6',
@@ -103,6 +133,11 @@ export const courses: Course[] = [
     studentCount: 220,
     lessons: 30,
     duration: '22hr 45min',
+     curriculum: [
+      { section: 'Unity and C# Basics', lessons: [{ title: 'Setting up Unity', duration: '30min', isPreview: true }, { title: 'C# Scripting Fundamentals', duration: '1hr 30min', isPreview: false }] },
+      { section: 'Building 2D Games', lessons: [{ title: 'Player Movement', duration: '1hr', isPreview: false }, { title: 'Physics and Collisions', duration: '1hr 15min', isPreview: false }] },
+      { section: 'Advanced Game Features', lessons: [{ title: 'Creating Enemies', duration: '2hr', isPreview: false }, { title: 'UI and Game Managers', duration: '1hr 45min', isPreview: false }] },
+    ],
   },
   {
     id: '7',
@@ -116,6 +151,11 @@ export const courses: Course[] = [
     studentCount: 280,
     lessons: 28,
     duration: '20hr 15min',
+     curriculum: [
+      { section: 'Frontend Development', lessons: [{ title: 'HTML, CSS, and JavaScript', duration: '5hr', isPreview: true }, { title: 'React for Beginners', duration: '4hr', isPreview: false }] },
+      { section: 'Backend Development', lessons: [{ title: 'Node.js and Express', duration: '5hr', isPreview: false }, { title: 'Databases with MongoDB', duration: '4hr', isPreview: false }] },
+      { section: 'Full-Stack Project', lessons: [{ title: 'Building a Blog', duration: '2hr 15min', isPreview: false }] },
+    ],
   },
     {
     id: '8',
@@ -130,6 +170,11 @@ export const courses: Course[] = [
     studentCount: 1050,
     lessons: 50,
     duration: '40hr 00min',
+     curriculum: [
+      { section: 'Drawing Fundamentals', lessons: [{ title: 'Lines, Shapes, and Forms', duration: '2hr', isPreview: true }, { title: 'Perspective and Composition', duration: '3hr', isPreview: false }] },
+      { section: 'Figure Drawing', lessons: [{ title: 'Anatomy for Artists', duration: '5hr', isPreview: false }, { title: 'Poses and Gestures', duration: '4hr', isPreview: false }] },
+      { section: 'Advanced Techniques', lessons: [{ title: 'Shading and Lighting', duration: '5hr', isPreview: false }, { title: 'Digital Painting', duration: '6hr', isPreview: false }] },
+    ],
   },
   {
     id: '9',
@@ -143,5 +188,10 @@ export const courses: Course[] = [
     studentCount: 750,
     lessons: 25,
     duration: '18hr 20min',
+     curriculum: [
+      { section: 'Camera Basics', lessons: [{ title: 'Understanding Exposure', duration: '1hr', isPreview: true }, { title: 'Aperture, Shutter Speed, and ISO', duration: '1hr 30min', isPreview: false }] },
+      { section: 'Composition Techniques', lessons: [{ title: 'Rule of Thirds', duration: '1hr', isPreview: false }, { title: 'Leading Lines and Framing', duration: '1hr 15min', isPreview: false }] },
+      { section: 'Editing and Post-Processing', lessons: [{ title: 'Introduction to Lightroom', duration: '2hr', isPreview: false }, { title: 'Advanced Photoshop Techniques', duration: '3hr', isPreview: false }] },
+    ],
   },
 ];

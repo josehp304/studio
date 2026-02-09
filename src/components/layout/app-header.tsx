@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -10,6 +11,7 @@ import {
   Star,
   Users,
   LayoutGrid,
+  ShoppingCart,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -46,6 +48,8 @@ const navLinks = [
     sublinks: [
       { label: 'About Us', href: '/#' },
       { label: 'Contact', href: '/#' },
+      { label: 'Cart', href: '/cart' },
+      { label: 'Checkout', href: '/checkout' },
     ],
   },
   {
@@ -111,8 +115,8 @@ export function AppHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -126,6 +130,12 @@ export function AppHeader() {
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>
+            <Button asChild variant="ghost" size="icon">
+                <Link href="/cart">
+                    <ShoppingCart className="h-5 w-5" />
+                    <span className="sr-only">Shopping Cart</span>
+                </Link>
+            </Button>
             <Link href="/login">
               <Button className="font-bold text-white bg-gradient-to-r from-[#FF725E] to-[#F54B8D] hover:from-[#f86552] hover:to-[#e44281]">
                 Login
@@ -171,7 +181,13 @@ export function AppHeader() {
                     </div>
                   ))}
                 </nav>
-                <div className="flex flex-col gap-4 mt-4">
+                 <div className="border-t pt-6 flex flex-col gap-4">
+                  <Button asChild variant="ghost" className="justify-start gap-2">
+                    <Link href="/cart" onClick={() => setOpen(false)}>
+                        <ShoppingCart className="h-5 w-5" />
+                        Shopping Cart
+                    </Link>
+                  </Button>
                   <Link href="/login" onClick={() => setOpen(false)}>
                     <Button className="w-full font-bold text-white bg-gradient-to-r from-[#FF725E] to-[#F54B8D] hover:from-[#f86552] hover:to-[#e44281]">
                       Login
