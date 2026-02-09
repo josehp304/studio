@@ -1,15 +1,6 @@
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { ComingSoon } from "@/components/coming-soon";
 
 export default function SupportTicketPage() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Support Tickets</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>View and respond to support tickets from students.</p>
-      </CardContent>
-    </Card>
-  );
+  return <ComingSoon title="Support Tickets" description="View and manage support requests." />;
 }

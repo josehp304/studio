@@ -1,15 +1,6 @@
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { ComingSoon } from "@/components/coming-soon";
 
 export default function EarningPage() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Earnings</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>View your earnings reports and analytics.</p>
-      </CardContent>
-    </Card>
-  );
+  return <ComingSoon title="Earnings" description="Detailed breakdown of your revenue." />;
 }

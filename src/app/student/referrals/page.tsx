@@ -1,15 +1,6 @@
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { ComingSoon } from "@/components/coming-soon";
 
 export default function ReferralsPage() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Referrals</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>Invite friends and earn rewards!</p>
-      </CardContent>
-    </Card>
-  );
+  return <ComingSoon title="Referrals" description="Invite friends and earn rewards." />;
 }

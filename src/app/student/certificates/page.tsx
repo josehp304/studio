@@ -1,15 +1,6 @@
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { ComingSoon } from "@/components/coming-soon";
 
-export default function MyCertificatesPage() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>My Certificates</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>View and download your earned certificates here.</p>
-      </CardContent>
-    </Card>
-  );
+export default function CertificatesPage() {
+  return <ComingSoon title="My Certificates" description="View and download your earned certificates." />;
 }

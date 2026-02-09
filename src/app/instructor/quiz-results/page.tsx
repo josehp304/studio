@@ -1,15 +1,6 @@
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { ComingSoon } from "@/components/coming-soon";
 
 export default function QuizResultsPage() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Quiz Results</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>View the results and performance of your students on quizzes.</p>
-      </CardContent>
-    </Card>
-  );
+  return <ComingSoon title="Quiz Results" description="View student performance and quiz scores." />;
 }

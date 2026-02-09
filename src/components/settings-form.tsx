@@ -140,6 +140,14 @@ function EditProfileTab() {
   );
 }
 
+import { SecurityTab } from '@/components/settings/security-tab';
+import { SocialProfilesTab } from '@/components/settings/social-profiles-tab';
+import { LinkedAccountsTab } from '@/components/settings/linked-accounts-tab';
+import { NotificationsTab } from '@/components/settings/notifications-tab';
+import { BillingAddressTab } from '@/components/settings/billing-address-tab';
+
+// ... (EditProfileTab component remains unchanged)
+
 export function SettingsForm() {
   return (
     <Card>
@@ -148,7 +156,7 @@ export function SettingsForm() {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="edit-profile" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-6">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-6 h-auto">
             <TabsTrigger value="edit-profile">Edit Profile</TabsTrigger>
             <TabsTrigger value="security">Security</TabsTrigger>
             <TabsTrigger value="social-profiles">Social Profiles</TabsTrigger>
@@ -160,19 +168,19 @@ export function SettingsForm() {
             <EditProfileTab />
           </TabsContent>
           <TabsContent value="security" className="mt-6">
-            <p className="text-muted-foreground">Security settings will be here.</p>
+            <SecurityTab />
           </TabsContent>
           <TabsContent value="social-profiles" className="mt-6">
-            <p className="text-muted-foreground">Social profiles settings will be here.</p>
+            <SocialProfilesTab />
           </TabsContent>
           <TabsContent value="linked-accounts" className="mt-6">
-            <p className="text-muted-foreground">Linked accounts settings will be here.</p>
+            <LinkedAccountsTab />
           </TabsContent>
           <TabsContent value="notifications" className="mt-6">
-            <p className="text-muted-foreground">Notifications settings will be here.</p>
+            <NotificationsTab />
           </TabsContent>
           <TabsContent value="billing-address" className="mt-6">
-            <p className="text-muted-foreground">Billing address settings will be here.</p>
+            <BillingAddressTab />
           </TabsContent>
         </Tabs>
       </CardContent>

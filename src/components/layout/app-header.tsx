@@ -38,6 +38,7 @@ const navLinks = [
     label: 'Instructor',
     href: '/instructor/dashboard',
     sublinks: [
+      { label: 'Instructor List', href: '/instructors' },
       { label: 'Dashboard', href: '/instructor/dashboard' },
       { label: 'My Courses', href: '/instructor/course' },
       { label: 'My Profile', href: '/instructor/profile' },
@@ -61,15 +62,18 @@ const navLinks = [
     label: 'Pages',
     href: '/#',
     sublinks: [
-      { label: 'About Us', href: '/#' },
-      { label: 'Contact', href: '/#' },
+      { label: 'About Us', href: '/about' },
+      { label: 'Course Categories', href: '/course-categories' },
+      { label: 'Contact', href: '/contact' },
+      { label: 'Terms & Conditions', href: '/terms' },
+      { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Cart', href: '/cart' },
       { label: 'Checkout', href: '/checkout' },
     ],
   },
   {
     label: 'Blog',
-    href: '/#',
+    href: '/blog',
   },
 ];
 

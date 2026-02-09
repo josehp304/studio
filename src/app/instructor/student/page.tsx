@@ -1,15 +1,6 @@
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { ComingSoon } from "@/components/coming-soon";
 
-export default function StudentPage() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>My Students</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>View and manage all students enrolled in your courses.</p>
-      </CardContent>
-    </Card>
-  );
+export default function InstructorStudentsPage() {
+  return <ComingSoon title="My Students" description="View and manage your enrolled students." />;
 }

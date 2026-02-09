@@ -1,15 +1,6 @@
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { ComingSoon } from "@/components/coming-soon";
 
 export default function WishlistPage() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Wishlist</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>These are the courses you've saved for later.</p>
-      </CardContent>
-    </Card>
-  );
+  return <ComingSoon title="Wishlist" description="Courses you have saved for later." />;
 }
