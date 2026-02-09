@@ -25,7 +25,51 @@ export type Course = {
   }[];
 };
 
+export type FeaturedInstructor = {
+  id: string;
+  name: string;
+  role: string;
+  avatarUrl: string;
+  rating: number;
+  isVerified: boolean;
+};
+
 const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || '';
+
+export const featuredInstructors: FeaturedInstructor[] = [
+  {
+    id: '1',
+    name: 'Joyce Pence',
+    role: 'Lead Designer',
+    avatarUrl: getImage('instructor-1'),
+    rating: 4.8,
+    isVerified: true,
+  },
+  {
+    id: '2',
+    name: 'Edith Dorsey',
+    role: 'Accountant',
+    avatarUrl: getImage('instructor-2'),
+    rating: 5.0,
+    isVerified: true,
+  },
+  {
+    id: '3',
+    name: 'Ruben Holmes',
+    role: 'Architect',
+    avatarUrl: getImage('instructor-3'),
+    rating: 4.8,
+    isVerified: true,
+  },
+  {
+    id: '4',
+    name: 'Carol Magner',
+    role: 'Lead Designer',
+    avatarUrl: getImage('instructor-5'),
+    rating: 4.5,
+    isVerified: true,
+  },
+];
 
 export const courses: Course[] = [
   {

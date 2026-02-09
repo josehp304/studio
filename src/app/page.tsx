@@ -1,11 +1,12 @@
 import { CourseCardGrid } from "@/components/course-card-grid";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { courses } from "@/lib/data";
+import { courses, featuredInstructors } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ArrowRight, Briefcase, Camera, Code, Megaphone, Palette, Search, Star, Users, Video, BarChart2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { InstructorCard } from "@/components/instructor-card";
 
 const categories = [
   { name: 'Design', icon: Palette, courseCount: 28, href: '/courses' },
@@ -138,6 +139,24 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Featured Instructors Section */}
+      <section className="py-20 bg-primary text-primary-foreground">
+          <div className="container mx-auto">
+              <div className="text-center mb-12">
+                  <p className="font-semibold text-accent mb-2">Featured Instructors</p>
+                  <h2 className="text-3xl md:text-4xl font-bold font-headline">Top Class & Professional Instructors</h2>
+                  <p className="text-lg text-primary-foreground/80 mt-2">
+                      Empowering Change: Stories from Those Who Took the Leap
+                  </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {featuredInstructors.map((instructor) => (
+                      <InstructorCard key={instructor.id} instructor={instructor} />
+                  ))}
+              </div>
+          </div>
       </section>
 
       {/* Become an Instructor Section */}
