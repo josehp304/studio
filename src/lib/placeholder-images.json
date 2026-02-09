@@ -1,3 +1,94 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "course-1",
+      "description": "A person learning to code on a laptop",
+      "imageUrl": "https://images.unsplash.com/photo-1512455102796-376c00aaacb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29kaW5nJTIwcHJvZ3JhbW1pbmd8ZW58MHx8fHwxNzcwNjQ2ODk3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coding programming"
+    },
+    {
+      "id": "course-2",
+      "description": "A person designing a website layout",
+      "imageUrl": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3ZWIlMjBkZXNpZ258ZW58MHx8fHwxNzcwNTQ0NzI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "web design"
+    },
+    {
+      "id": "course-3",
+      "description": "A person editing a video",
+      "imageUrl": "https://images.unsplash.com/photo-1614963326505-843868e1d83a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx2aWRlbyUyMGVkaXRpbmd8ZW58MHx8fHwxNzcwNTc4MDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "video editing"
+    },
+    {
+      "id": "course-4",
+      "description": "A person giving a presentation on business",
+      "imageUrl": "https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxidXNpbmVzcyUyMHByZXNlbnRhdGlvbnxlbnwwfHx8fDE3NzA2MDI4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business presentation"
+    },
+    {
+      "id": "course-5",
+      "description": "A person doing photography with a DSLR camera",
+      "imageUrl": "https://images.unsplash.com/photo-1605076896228-086cda8868c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaG90b2dyYXBoeSUyMGNhbWVyYXxlbnwwfHx8fDE3NzA2NjM2MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "photography camera"
+    },
+    {
+      "id": "course-6",
+      "description": "A person learning about data science with charts",
+      "imageUrl": "https://images.unsplash.com/photo-1662638600476-d563fffbb072?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXRhJTIwc2NpZW5jZXxlbnwwfHx8fDE3NzA1ODY2OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data science"
+    },
+    {
+      "id": "course-7",
+      "description": "A person working on a marketing campaign",
+      "imageUrl": "https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYXJrZXRpbmclMjBzdHJhdGVneXxlbnwwfHx8fDE3NzA2NjAxMTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "marketing strategy"
+    },
+    {
+      "id": "course-8",
+      "description": "A person painting on a canvas",
+      "imageUrl": "https://images.unsplash.com/photo-1573221566340-81bdde00e00b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhcnQlMjBwYWludGluZ3xlbnwwfHx8fDE3NzA2NTIwODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "art painting"
+    },
+    {
+      "id": "course-9",
+      "description": "A person practicing yoga",
+      "imageUrl": "https://images.unsplash.com/photo-1611094601537-cdbb75b979cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx5b2dhJTIwd2VsbG5lc3N8ZW58MHx8fHwxNzcwNjYzNjExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yoga wellness"
+    },
+    {
+      "id": "instructor-1",
+      "description": "Portrait of an instructor",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzA1ODUyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "instructor-2",
+      "description": "Portrait of an instructor",
+      "imageUrl": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MDY0Mjg1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "instructor-3",
+      "description": "Portrait of an instructor",
+      "imageUrl": "https://images.unsplash.com/photo-1624395213043-fa2e123b2656?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzA2Mjg2Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "instructor-4",
+      "description": "Portrait of an instructor",
+      "imageUrl": "https://images.unsplash.com/photo-1623605931891-d5b95ee98459?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwc21pbGluZ3xlbnwwfHx8fDE3NzA1NjU3MjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "instructor-5",
+      "description": "Portrait of an instructor",
+      "imageUrl": "https://images.unsplash.com/photo-1573496527892-904f897eb744?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b21hbiUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3NzA2MTA2Njd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman professional"
+    },
+    {
+      "id": "instructor-6",
+      "description": "Portrait of an instructor",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzcwNTcyODY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man professional"
+    }
+  ]
 }
