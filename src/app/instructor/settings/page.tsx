@@ -1,15 +1,5 @@
-
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { SettingsForm } from "@/components/settings-form";
 
 export default function SettingsPage() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Settings</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>Manage your instructor account settings and preferences.</p>
-      </CardContent>
-    </Card>
-  );
+  return <SettingsForm />;
 }
