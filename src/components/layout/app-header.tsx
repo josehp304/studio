@@ -18,6 +18,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '../icons/logo';
@@ -40,6 +41,20 @@ const navLinks = [
       { label: 'Instructor List', href: '/#' },
       { label: 'Instructor Profile', href: '/#' },
     ],
+  },
+  {
+    label: 'Student',
+    href: '#',
+    sublinks: [
+        { label: 'Student Dashboard', href: '/student/dashboard' },
+        { label: 'My Profile', href: '/student/profile' },
+        { label: 'Enrolled Course', href: '/student/enrolled-courses' },
+        { label: 'My Certificates', href: '/student/certificates' },
+        { label: 'Wishlist', href: '/student/wishlist' },
+        { label: 'Reviews', href: '/student/reviews' },
+        { label: 'My Quiz Attempts', href: '/student/quiz-attempts' },
+        { label: 'Order History', href: '/student/order-history' },
+    ]
   },
   {
     label: 'Pages',
@@ -149,15 +164,14 @@ export function AppHeader() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="flex flex-col p-0">
-              <SheetHeader className="p-6 pb-0">
-                <SheetTitle>
-                  <Link href="/" onClick={() => setOpen(false)} className="inline-block">
-                    <Logo />
-                  </Link>
+              <SheetHeader className="p-6 pb-4">
+                 <SheetTitle>
+                    <Link href="/" onClick={() => setOpen(false)} className="inline-block">
+                        <Logo />
+                    </Link>
                 </SheetTitle>
-                <SheetDescription className="sr-only">Mobile Navigation Menu</SheetDescription>
               </SheetHeader>
-              <div className="flex-1 overflow-y-auto p-6">
+              <div className="flex-1 overflow-y-auto p-6 pt-0">
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
                     <div key={link.label}>
