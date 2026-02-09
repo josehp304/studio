@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { courses, featuredInstructors } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ArrowRight, Briefcase, Camera, Code, Megaphone, Palette, Search, Star, Users, Video, BarChart2 } from "lucide-react";
+import { ArrowRight, Briefcase, Camera, Code, Megaphone, Palette, Search, Star, Users, Video, BarChart2, ListChecks, BadgeDollarSign, PlaySquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { InstructorCard } from "@/components/instructor-card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const categories = [
   { name: 'Design', icon: Palette, courseCount: 28, href: '/courses' },
@@ -141,6 +142,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="py-20">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">How It Works</h2>
+            <p className="text-lg text-muted-foreground mt-2">
+              Start your learning journey in just a few simple steps.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div className="flex flex-col items-center">
+              <div className="bg-primary/10 p-6 rounded-full mb-4">
+                <ListChecks className="w-12 h-12 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-2">1. Browse Courses</h3>
+              <p className="text-muted-foreground">
+                Explore a wide variety of courses and find the one that's right for you. Use our search and filters to narrow down your options.
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="bg-primary/10 p-6 rounded-full mb-4">
+                <BadgeDollarSign className="w-12 h-12 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-2">2. Purchase & Enroll</h3>
+              <p className="text-muted-foreground">
+                Once you've found your course, simply purchase it to get lifetime access. Enrollment is quick and easy.
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="bg-primary/10 p-6 rounded-full mb-4">
+                <PlaySquare className="w-12 h-12 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-2">3. Start Learning</h3>
+              <p className="text-muted-foreground">
+                Begin your learning adventure immediately. Watch lessons, complete assignments, and interact with instructors at your own pace.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Instructors Section */}
       <section className="py-20 bg-primary text-primary-foreground">
           <div className="container mx-auto">
@@ -186,6 +228,46 @@ export default function Home() {
                      {/* Can add an image or graphic here */}
                  </div>
              </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-primary/5">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Frequently Asked Questions</h2>
+            <p className="text-lg text-muted-foreground mt-2">
+              Have questions? We've got answers.
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-lg font-semibold text-primary">Are the courses self-paced?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Yes, absolutely! All of our courses are designed to be self-paced. You can learn on your own schedule, from anywhere in the world. Once you enroll, you have lifetime access to the course materials.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-lg font-semibold text-primary">What if I'm not happy with a course?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  We offer a 30-day money-back guarantee on all of our courses. If you're not satisfied for any reason, just contact our support team within 30 days of purchase for a full refund.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-lg font-semibold text-primary">Do I get a certificate upon completion?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Yes! Upon successful completion of any paid course, you will receive a verifiable certificate that you can share on your LinkedIn profile, resume, or with your employer.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-lg font-semibold text-primary">Can I access courses on my mobile device?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Our platform is fully responsive, which means you can access your courses and learn on any device - desktop, tablet, or smartphone.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
