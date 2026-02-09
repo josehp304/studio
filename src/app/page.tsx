@@ -1,26 +1,175 @@
-import { CourseListing } from "@/components/course-listing";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { CourseCardGrid } from "@/components/course-card-grid";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { courses } from "@/lib/data";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { ArrowRight, Briefcase, Camera, Code, Megaphone, Palette, Search, Star, Users, Video, BarChart2 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+const categories = [
+  { name: 'Design', icon: Palette, courseCount: 28, href: '/courses' },
+  { name: 'Development', icon: Code, courseCount: 42, href: '/courses' },
+  { name: 'IT & Software', icon: Briefcase, courseCount: 35, href: '/courses' },
+  { name: 'Business', icon: BarChart2, courseCount: 19, href: '/courses' },
+  { name: 'Marketing', icon: Megaphone, courseCount: 25, href: '/courses' },
+  { name: 'Photography', icon: Camera, courseCount: 12, href: '/courses' },
+];
+
+const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || '';
 
 export default function Home() {
+  const featuredCourses = courses.slice(0, 6);
+
   return (
     <div>
-      <div className="bg-primary/5 py-8">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-primary font-headline mb-2">Course List</h2>
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/">Home</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Course List</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+      {/* Hero Section */}
+      <section className="relative bg-primary/5 py-20 md:py-32">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6 text-center lg:text-left">
+            <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
+              The Best Way to <br/> Learn Your Favorite Course
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Choose from over 200,000 online video courses with new additions published every month.
+            </p>
+            <div className="relative max-w-lg mx-auto lg:mx-0">
+               <Input
+                placeholder="Search for anything..."
+                className="h-14 text-base pl-14 rounded-full shadow-lg"
+              />
+              <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-muted-foreground" />
+              <Button size="lg" className="absolute right-2 top-1/2 -translate-y-1/2 font-bold text-white bg-gradient-to-r from-[#FF725E] to-[#F54B8D] hover:from-[#f86552] hover:to-[#e44281] rounded-full">
+                Search
+              </Button>
+            </div>
+          </div>
+          <div className="relative h-64 lg:h-full min-h-[250px]">
+             <Image
+              src={getImage('hero-background')}
+              alt="E-learning student"
+              fill
+              className="object-contain"
+              data-ai-hint="e-learning student"
+            />
+          </div>
         </div>
-      </div>
-      <CourseListing />
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 bg-card">
+          <div className="container mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                  <div className="flex items-center justify-center gap-4">
+                      <div className="bg-primary/10 p-3 rounded-full">
+                          <Video className="w-8 h-8 text-primary" />
+                      </div>
+                      <div>
+                          <h3 className="text-lg font-bold text-primary">200,000+ Online Courses</h3>
+                          <p className="text-muted-foreground">Explore a wide range of skills.</p>
+                      </div>
+                  </div>
+                  <div className="flex items-center justify-center gap-4">
+                       <div className="bg-primary/10 p-3 rounded-full">
+                          <Users className="w-8 h-8 text-primary" />
+                      </div>
+                      <div>
+                          <h3 className="text-lg font-bold text-primary">Expert Instruction</h3>
+                          <p className="text-muted-foreground">Find the right instructor for you.</p>
+                      </div>
+                  </div>
+                  <div className="flex items-center justify-center gap-4">
+                       <div className="bg-primary/10 p-3 rounded-full">
+                          <Star className="w-8 h-8 text-primary" />
+                      </div>
+                      <div>
+                          <h3 className="text-lg font-bold text-primary">Lifetime Access</h3>
+                          <p className="text-muted-foreground">Learn on your schedule.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      {/* Featured Courses Section */}
+      <section className="py-20">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Featured Courses</h2>
+            <p className="text-lg text-muted-foreground mt-2">
+              Explore our most popular courses for professionals
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredCourses.map((course) => (
+              <CourseCardGrid key={course.id} course={course} />
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Button asChild size="lg" variant="outline" className="font-bold text-primary border-primary hover:bg-primary/5 hover:text-primary">
+              <Link href="/courses">
+                View All Courses <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+      
+      {/* Top Categories Section */}
+      <section className="py-20 bg-primary/5">
+        <div className="container mx-auto">
+           <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Top Categories</h2>
+            <p className="text-lg text-muted-foreground mt-2">
+              Discover your perfect program in our courses.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {categories.map((category) => (
+              <Link key={category.name} href={category.href}>
+                <div className="group bg-card p-6 rounded-lg shadow-card text-center transition-transform duration-300 hover:-translate-y-2">
+                  <div className="inline-block bg-primary/10 p-4 rounded-full mb-4 group-hover:bg-accent transition-colors">
+                    <category.icon className="h-8 w-8 text-primary group-hover:text-accent-foreground" />
+                  </div>
+                  <h3 className="font-bold text-primary group-hover:text-accent">{category.name}</h3>
+                  <p className="text-sm text-muted-foreground">{category.courseCount} Courses</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Become an Instructor Section */}
+      <section className="py-20">
+        <div className="container mx-auto">
+          <div className="relative rounded-lg overflow-hidden p-12 bg-primary text-primary-foreground">
+             <div className="absolute inset-0">
+                <Image
+                  src={getImage('become-instructor-banner')}
+                  alt="Become an Instructor"
+                  fill
+                  className="object-cover opacity-20"
+                  data-ai-hint="instructor teaching"
+                />
+             </div>
+             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <h2 className="text-3xl md:text-4xl font-bold font-headline">Become an Instructor</h2>
+                  <p className="text-lg text-primary-foreground/80">
+                    Instructors from around the world teach millions of students on our platform. We provide the tools and skills to teach what you love.
+                  </p>
+                  <Button asChild size="lg" className="font-bold text-primary bg-white hover:bg-gray-100">
+                    <Link href="/instructor">Start Teaching Today</Link>
+                  </Button>
+                </div>
+                 <div className="hidden md:block">
+                     {/* Can add an image or graphic here */}
+                 </div>
+             </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -32,7 +32,7 @@ const navLinks = [
   },
   {
     label: 'Courses',
-    href: '/#',
+    href: '/courses',
   },
   {
     label: 'Instructor',

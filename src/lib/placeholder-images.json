@@ -89,6 +89,18 @@
       "description": "Portrait of an instructor",
       "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzcwNTcyODY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man professional"
+    },
+    {
+      "id": "hero-background",
+      "description": "A smiling student learning online with headphones",
+      "imageUrl": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlLWxlYXJuaW5nfGVufDB8fHx8MTc3MDY2MzYxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "e-learning student"
+    },
+    {
+      "id": "become-instructor-banner",
+      "description": "An instructor teaching in front of a whiteboard",
+      "imageUrl": "https://images.unsplash.com/photo-1573496130407-57329f01f769?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbnN0cnVjdG9yJTIwdGVhY2hpbmd8ZW58MHx8fHwxNzcwNjYzNjExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "instructor teaching"
     }
   ]
 }
