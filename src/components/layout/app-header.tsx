@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -20,7 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '../icons/logo';
 import { cn } from '@/lib/utils';
 import { Input } from '../ui/input';
@@ -149,11 +148,16 @@ export function AppHeader() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
-              <div className="flex flex-col gap-6 p-6">
-                <Link href="/" onClick={() => setOpen(false)}>
-                  <Logo />
-                </Link>
+            <SheetContent side="left" className="flex flex-col p-0">
+              <SheetHeader className="p-6 pb-0">
+                <SheetTitle>
+                  <Link href="/" onClick={() => setOpen(false)} className="inline-block">
+                    <Logo />
+                  </Link>
+                </SheetTitle>
+                <SheetDescription className="sr-only">Mobile Navigation Menu</SheetDescription>
+              </SheetHeader>
+              <div className="flex-1 overflow-y-auto p-6">
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
                     <div key={link.label}>
@@ -181,19 +185,19 @@ export function AppHeader() {
                     </div>
                   ))}
                 </nav>
-                 <div className="border-t pt-6 flex flex-col gap-4">
-                  <Button asChild variant="ghost" className="justify-start gap-2">
-                    <Link href="/cart" onClick={() => setOpen(false)}>
-                        <ShoppingCart className="h-5 w-5" />
-                        Shopping Cart
-                    </Link>
-                  </Button>
-                  <Link href="/login" onClick={() => setOpen(false)}>
-                    <Button className="w-full font-bold text-white bg-gradient-to-r from-[#FF725E] to-[#F54B8D] hover:from-[#f86552] hover:to-[#e44281]">
-                      Login
-                    </Button>
+              </div>
+               <div className="border-t p-6 flex flex-col gap-4">
+                <Button asChild variant="ghost" className="justify-start gap-2">
+                  <Link href="/cart" onClick={() => setOpen(false)}>
+                      <ShoppingCart className="h-5 w-5" />
+                      Shopping Cart
                   </Link>
-                </div>
+                </Button>
+                <Link href="/login" onClick={() => setOpen(false)}>
+                  <Button className="w-full font-bold text-white bg-gradient-to-r from-[#FF725E] to-[#F54B8D] hover:from-[#f86552] hover:to-[#e44281]">
+                    Login
+                  </Button>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
