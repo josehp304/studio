@@ -1,7 +1,14 @@
 import { CourseListing } from "@/components/course-listing";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { getPublishedCourses } from "@/db/queries/courses";
+import { mapDbCourseToUiCourse } from "@/lib/mappers";
 
-export default function CoursesPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function CoursesPage() {
+  const dbCourses = await getPublishedCourses();
+  const courses = dbCourses.map(mapDbCourseToUiCourse);
+
   return (
     <div>
       <div className="bg-primary/5 py-8">
@@ -20,7 +27,7 @@ export default function CoursesPage() {
           </Breadcrumb>
         </div>
       </div>
-      <CourseListing />
+      <CourseListing initialCourses={courses} />
     </div>
   );
 }

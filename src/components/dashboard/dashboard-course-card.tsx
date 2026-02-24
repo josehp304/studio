@@ -8,7 +8,7 @@ import { PlayCircle } from "lucide-react";
 
 interface DashboardCourseCardProps {
   course: {
-    id: number;
+    id: string | number;
     title: string;
     instructor: string;
     progress: number;
@@ -38,22 +38,22 @@ export function DashboardCourseCard({ course }: DashboardCourseCardProps) {
               <p className="text-sm text-muted-foreground">{course.instructor}</p>
             </div>
             <Link href={`/student/courses/${course.id}`}>
-               <Button size="sm" variant="ghost" className="h-8 w-8 p-0">
-                  <PlayCircle className="h-5 w-5" />
-                  <span className="sr-only">Resume Course</span>
-               </Button>
+              <Button size="sm" variant="ghost" className="h-8 w-8 p-0">
+                <PlayCircle className="h-5 w-5" />
+                <span className="sr-only">Resume Course</span>
+              </Button>
             </Link>
           </div>
           <div className="space-y-1">
-             <div className="flex justify-between text-xs text-muted-foreground">
-                <span>{course.progress}% Complete</span>
-                <span>{course.completedLessons}/{course.totalLessons} Lessons</span>
-             </div>
-             <Progress value={course.progress} className="h-2" />
+            <div className="flex justify-between text-xs text-muted-foreground">
+              <span>{course.progress}% Complete</span>
+              <span>{course.completedLessons}/{course.totalLessons} Lessons</span>
+            </div>
+            <Progress value={course.progress} className="h-2" />
           </div>
         </div>
         <div className="mt-2 text-xs text-muted-foreground">
-            Last accessed: {course.lastAccessed}
+          Last accessed: {course.lastAccessed}
         </div>
       </CardContent>
     </Card>
